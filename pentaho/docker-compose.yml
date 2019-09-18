@@ -1,0 +1,10 @@
+# docker run -d -p 8080:8080 -e PGHOST=pentaho-pg wmarinho/pentaho 
+# login with shell script: psql -h localhost -p 5432 -U zquangu112z -W
+
+version: "3.1"
+
+services:
+  biserver:
+    image: wmarinho/pentaho
+    ports:
+      - 8080:8080
