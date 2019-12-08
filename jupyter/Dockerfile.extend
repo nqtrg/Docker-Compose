@@ -1,0 +1,4 @@
+FROM jupyterlab:base
+ADD ./requirements.txt /
+RUN apk add tiff-dev jpeg-dev zlib-dev freetype-dev lcms2-dev libwebp-dev tcl-dev tk-dev python2-tkinter
+RUN pip install -r /requirements.txt

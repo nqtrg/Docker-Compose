@@ -1,0 +1,5 @@
+pymysql
+pandas==0.25.1
+sqlalchemy
+psycopg2-binary
+wordcloud

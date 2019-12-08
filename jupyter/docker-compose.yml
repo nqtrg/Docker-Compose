@@ -1,0 +1,24 @@
+version: '3'
+volumes: 
+  lab-volumne:
+services:
+  jupyterlab:
+    image: jupyterlab:extend
+    ports:
+      - "8888:8888"
+    # links:
+    #   - postgres:postgres
+    volumes:
+      - lab-volumne:/opt/app/data 
+      # - ../data:/opt/app/data/data
+      # - ../src/notebooks:/opt/app/data/notebooks
+    entrypoint: sh -c 'jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/opt/app/data --allow-root'
+
+  # postgres:
+  #   image: postgres:10.4
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #     - POSTGRES_DB=postgres
+  #   ports:
+  #     - 5432:5432
