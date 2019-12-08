@@ -1,0 +1,4 @@
+[submodule "northwind_psql"]
+	path = northwind_psql
+	url = git@github.com:pthom/northwind_psql.git
+	branch = master
