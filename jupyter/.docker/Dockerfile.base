@@ -6,6 +6,14 @@ ENV LANG=C.UTF-8
 COPY .docker/requirements-base.txt requirements.txt
 RUN pip install -r requirements.txt
 
+# Extension TOC
+RUN jupyter labextension install @jupyterlab/toc
+
+# Upgrade lab version + rebuild
+RUN pip install --upgrade jupyterlab
+RUN jupyter lab build
+
+
 # Expose Jupyter port & cmd
 EXPOSE 8888
 RUN mkdir -p ~/data
