@@ -1,0 +1,11 @@
+pymysql
+sqlalchemy
+psycopg2-binary
+wordcloud
+cython
+numpy
+pandas
+matplotlib
+folium
+lxml
+nltk

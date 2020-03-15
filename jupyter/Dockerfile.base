@@ -1,8 +1,0 @@
-FROM mikebirdgeneau/jupyterlab
-
-RUN apk add postgresql-dev
-
-RUN pip install pandas==0.25.1
-RUN pip install pymysql
-RUN pip install sqlalchemy
-RUN pip install psycopg2-binary
