@@ -46,3 +46,4 @@ jobs:
         uses: github/super-linter@v2.0.0
         env:
           VALIDATE_DOCKER: true
+          VALIDATE_ALL_CODEBASE: false
