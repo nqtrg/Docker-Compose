@@ -47,4 +47,4 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_ANSIBLE: false
-	  VALIDATE_DOCKER: true
+	        VALIDATE_DOCKER: true
