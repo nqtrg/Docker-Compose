@@ -1,0 +1,11 @@
+version: '3'
+volumes: 
+  pyspark:
+services:
+  pyspark:
+    image: jupyter/pyspark-notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan/.ipython
+    entrypoint: sh -c 'jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/home/jovyan/.ipython --allow-root'
