@@ -1,9 +1,10 @@
 version: '3'
-volumes: 
+volumes:
   pyspark:
 services:
   pyspark:
-    image: jupyter/pyspark-notebook
+
+    image:  jupyter/pyspark-notebook
     ports:
       - "8888:8888"
     volumes:
