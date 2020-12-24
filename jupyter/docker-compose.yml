@@ -5,7 +5,7 @@ services:
   jupyterlab:
     image: jupyterlab:extend
     ports:
-      - "8888:8888"
+      - "8889:8888"
     volumes:
       - ./:/home/jovyan/.ipython
     entrypoint: sh -c 'jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/home/jovyan/.ipython --allow-root'

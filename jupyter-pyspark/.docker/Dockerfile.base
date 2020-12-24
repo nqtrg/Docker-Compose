@@ -1,0 +1,19 @@
+FROM jupyter/datascience-notebook
+
+ENV LANG=C.UTF-8
+
+# Install Python Packages & Requirements (Done near end to avoid invalidating cache)
+COPY .docker/requirements-base.txt requirements.txt
+RUN pip install -r requirements.txt
+
+# Upgrade lab version + rebuild
+RUN pip install --upgrade jupyterlab
+RUN jupyter lab build
+
+# Extension TOC
+RUN jupyter labextension install @jupyterlab/toc
+
+# Expose Jupyter port & cmd
+EXPOSE 8888
+RUN mkdir -p ~/data
+CMD jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=~/data --allow-root
